@@ -1,0 +1,200 @@
+<!doctype html>
+<html>
+<head>
+<link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+<meta charset="UTF-8">
+<title>Project 1 Gloria</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+<style>
+h1{
+	font-family: 'Roboto Slab', serif;
+	font-size:40px;
+	text-align:left;
+	color:black;
+	padding-left:3%;
+	}
+h2{
+	font-family: 'Abel', sans-serif;
+	text-align:left;
+	color:#06C;
+	font-size:18px;
+	padding-left:3%;
+	}
+h3{
+	font-family: 'Raleway', sans-serif;
+	font-size:14px;
+	color:#666;
+	padding-left:3%;
+	}
+
+.picture{
+	padding-left:3%;
+}
+
+.source{
+	padding:3%;
+	font-style:italic;
+	font-family: 'Raleway', sans-serif;
+	height:0px;
+}
+
+.paragraph{
+	font-family:Georgia;
+	font-size:18px;
+	padding-left:30px;
+	width:700px;
+	line-height:25px;
+	text-align:justify;
+	
+	}
+</style>
+
+
+
+</head>
+
+<body>
+	
+    <h1>The more you learn, the more you earn</h1>
+
+	<div class="byline">
+		<h2>By GLORIA SONG</h2>
+		<h3>Updated Sept. 14, 2015</h3>
+	</div>
+
+	<div class="picture">
+		
+        <img src="http://scholasticadministrator.typepad.com/.a/6a00e54f8c25c9883401348777dc53970c-300wi" width="400px" height="auto">	
+   	 <a href="http://scholasticadministrator.typepad.com/thisweekineducation/2010/09/income-how-k-12-education-ruined-america-benefitted-you.html">
+     
+     <div class="source">PHOTO: Scholastic</div>
+     </a>
+	</div>  
+  
+  <div class="paragraph">
+  
+<p>Generally, more education means higher earnings power as showed by the data from the Bureau of Labor Statistics. From year 1979 to year 2014, the difference in median weekly earnings of employees with bachelor or higher degrees and high school degrees, after inflation-adjusted calculation presenting in 2014 dollars, has been enlarged from 1.4 times to nearly 1.8 times. The income inequality between men and women is still obvious but the gap has been narrowed.</p>
+
+  </div>
+  
+<p></p>
+<p></p>
+<p></p>
+
+	<div id="container" style="max-width:950px;min-width: 310px; height: 600px; "></div>
+<script>
+$(function () {
+    $('#container').highcharts({
+        title: {
+			style:{fontWeight:'bold',fontSize:'22px'},
+            text: 'Median weekly earnings in 2014 dollars of people 25 years and older, by educational attainment and gender',
+            x: -20 //center
+			
+        },
+        
+        xAxis: {
+            categories: [1979,1980,1981,1982,1983,1984
+,1985,1986,1987,1988,1989,1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,
+2013,2014, ]
+        },
+        yAxis: {
+            title: {
+                text: 'Median weekly earnings in 2014 dollars'
+            },
+			
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valuePrefix: '$',
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+	
+        series: [ {
+            name: 'Both sexes, bachelor degree or higher',
+            data: [1046,1030,1018,1033,1043,1054,1063,1082,1126,1125,1124,1121,1129,1150,1153,1158,1153,1140,1146,1192,1222,1226,1231,1238,1241,1236,1228,1219,1224,1227,1255,1242,1211,1201,1213,1193],
+			color:'#4FC3F7'
+        }, {
+            name: 'Both sexes, some college or associate degree',
+            data:[857,833,810,828,821,829,838,843,840,827,834,837,829,800,797,788,784,779,787,810,824,820,825,828,822,828,812,812,804,794,801,797,778,772,760,761],
+			color:'#1E88E5'
+        }, 
+            {
+            name: 'Both sexes, high school graduates',
+            data:[757,729,715,712,704,701,700,709,711,708,692,678,673,666,669,665,667,666,678,695,696,695,695,704,713,719,707,698,689,680,691,680,672,672,662,668],
+			color:'#3F51B5'
+        }, {
+            name: 'Both sexes, less than high school',
+            data: [638,608,600,585,579,570,567,573,567,554,548,533,520,514,506,,485,477,477,472,489,491,498,511,511,510,503,496,492,489,498,501,482,475,486,480,488],
+			color:'#9C27B0'
+        },{
+			name:'Men, bachelor degree or higher',
+			data:[1204,1170,1188,1186,1172,1219,1239,1274,1303,1306,1301,1302,1295,1307,1300,1305,1304,1314,1318,1363,1388,1403,1426,1434,1456,1432,1415,1414,1419,1414,1465,1444,1402,1413,1418,1385]
+			,color:'#4CAF50'
+			
+					},{
+			name:'Women, bachelor degree or higher',
+			data:[802,795,795,816,835,846,870,899,930,933,935,940,953,982,985,1002,994,988,988,1026,1051,1040,1051,1064,1071,1078,1070,1062,1064,1051,1071,1071,1051,1032,1060,1049]	,
+			color:'#E91E63'	
+		}]
+    });
+});
+
+</script>
+
+	<div class="source">
+   
+     <a href="http://www.bls.gov/opub/ted/2015/more-education-still-means-more-pay-in-2014.htm">Source: Bereau of Labor Statistics,United States Department of Labor</a>
+    </div>
+    
+    <p></p>
+
+	<div class="paragraph">
+<p>The income growth rate varied from people with different education level after the inflation adjustment. Excluding inflation, as demonstrated in dollars of 2014 value, workers’ earnings powers showed a downward slope in a general image, except people with bachelor or higher degrees. When workers with bachelor or higher degrees, enjoyed a 14.05% income growth, people with college or associate degree, high school and less than high school education suffered negative growth rates of -11.20%, -11.76%, -23.51% respectively. The lower the educational attainment, the more dramatic the negative growth rate was. It revealed  harder living conditions for low educated people, or in other words, low-income individuals to support themselves.</p>
+
+<p>Highly paid workers typically have expertise of certain intellectual fields, such as law, medicine, finance, IT and etc. They need to receive high level of education, a bachelor or higher degree education, to obtain such professional knowledge. The boom in high technology and financial industries result in an intense demand for highly educated employees. On the other hand, with the industry upgrading, fewer jobs are available to workers with only high school degrees. Many manufacturing jobs can be replaced by machines or computers. Workers with high school degree face even harder living situations to support middle-class lives. </p>
+
+<p>Furthermore, earning powers can in return affect education level. The high cost of college and university is a big obstacle preventing younger generation from low educated families pursuing a higher education. This may cause a vicious circle. Additionally, wealthy students have received lots of learning resources to gain various skills and experiences since their birth when low-income students from poor school systems have to spend more time working at the same time. These differences accumulate year after year and result in distinct situations of college admissions. It is much easier for wealthy students to be admitted to a better college with higher GPAs and wider range of activity participations. Besides, with parents as alumina, children from high educated families have more advantages over those whose parents are not.</p>
+
+<p>To tackle these problems, policies, such as government expenditures targeting on educational sponsorship, minimum wage rate benefiting the poor and progressive tax rates reducing income inequality, have been carried out.</p>
+
+<p>Education is not the only factor that influences income levels. As shown by the graph, there were significant income plunges during financial crisis period. Also, even with higher education background, women generally receive less payment than men. According to the data from national center for education statistics, the undergraduate enrollment of female students exceeded male students and will be still more than male students. Although the income difference between men and women remains big, women to men income ratio, for people with bachelor or higher degrees, has been narrowed from 66.61% in year 1979 to 75.74% in year 2014 . It also indicated that women had higher income growth in comparison with men. </p>
+
+<img src="http://nces.ed.gov/programs/coe/figures/images/figure-cha-1.gif">
+
+<h3>
+Actual and projected undergraduate enrollment in degree-granting postsecondary institutions, by sex: Fall 1990–2024
+</h3>
+
+<div class="source">
+   
+     <a href="http://nces.ed.gov/programs/coe/indicator_cha.asp#info">Source: National Center for Education Statistics</a>
+    </div>
+
+
+<p>Nevertheless, education is still an important factor. There are still many successful and wealthy people that do not have a bachelor or higher degree so that a diploma may not mean everything. What matters is the expertise and experience, which can be gained through education.</p>
+</div>
+
+
+
+
+</body>
+</html>
